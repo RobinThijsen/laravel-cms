@@ -1,23 +1,24 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "robinthijsen/laravel-cms",
+    "description": "A Simple Laravel CMS package using livewire",
     "keywords": [
-        ":vendor_name",
+        "robinthijsen",
         "laravel",
-        ":package_slug"
+        "cms"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/RobinThijsen/laravel-cms",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Robin Thijsen",
+            "email": "robinthijsen.pro@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.4",
         "spatie/laravel-package-tools": "^1.16",
+        "livewire/livewire": "v3.5.18",
         "illuminate/contracts": "^10.0||^11.0"
     },
     "require-dev": {
@@ -35,14 +36,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "LaravelCMS\\": "src/",
+            "LaravelCMS\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
-            "Workbench\\App\\": "workbench/app/"
+            "LaravelCMS\\Tests\\": "tests/",
         }
     },
     "scripts": {
@@ -63,10 +63,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "LaravelCMS\\LaravelCMSServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "LaravelCMS": "LaravelCMS\\Facades\\LaravelCMS"
             }
         }
     },
