@@ -2,7 +2,7 @@
     <section>
         <h3>{{ config('cms.app.name') }}</h3>
 
-        <form wire:submit.self="reset" class="form">
+        <form wire:submit.self="resetPassword" class="form">
             @csrf
 
             @if ($step == self::STEP_REQUEST)

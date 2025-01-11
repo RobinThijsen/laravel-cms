@@ -38,7 +38,7 @@ class ResetPassword extends Component
         $this->step = self::STEP_RESET;
     }
 
-    public function reset()
+    public function resetPassword()
     {
         $this->validate();
         $user = User::where('email', $this->email)->first();
