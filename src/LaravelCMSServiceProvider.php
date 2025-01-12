@@ -3,6 +3,12 @@
 namespace LaravelCMS;
 
 use Illuminate\Support\Facades\Blade;
+use LaravelCMS\Livewire\Admin\Dashboard;
+use LaravelCMS\Livewire\Admin\Pages\PageDetail;
+use LaravelCMS\Livewire\Admin\Pages\Pages;
+use LaravelCMS\Livewire\Auth\Login;
+use LaravelCMS\Livewire\Auth\ResetPassword;
+use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -18,6 +24,7 @@ class LaravelCMSServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-cms')
+            ->hasViews()
             ->hasConfigFile()
             ->hasMigrations('create_cms_tables')
             ->hasRoute('admin')
@@ -39,5 +46,15 @@ class LaravelCMSServiceProvider extends PackageServiceProvider
     public function bootingPackage(): void
     {
         Blade::componentNamespace('LaravelCMS\\View\\Components\\Form\\', 'form');
+        $this->registerLivewireComponent();
+    }
+
+    private function registerLivewireComponent(): void
+    {
+        Livewire::component('login', Login::class);
+        Livewire::component('reset-password', ResetPassword::class);
+        Livewire::component('dashboard', Dashboard::class);
+        Livewire::component('pages', Pages::class);
+        Livewire::component('page-detail', PageDetail::class);
     }
 }

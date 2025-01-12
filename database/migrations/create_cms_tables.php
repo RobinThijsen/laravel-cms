@@ -9,15 +9,7 @@ return new class extends Migration
     public function up()
     {
         \Illuminate\Database\Eloquent\Model::unguard();
-        Schema::dropIfExists($this->buildName('page_content_langs'));
-        Schema::dropIfExists($this->buildName('page_contents'));
-        Schema::dropIfExists($this->buildName('page_content_types'));
-        Schema::dropIfExists($this->buildName('pages'));
-        Schema::dropIfExists($this->buildName('langs'));
-        Schema::dropIfExists($this->buildName('user_privilege'));
-        Schema::dropIfExists($this->buildName('privileges'));
-        Schema::dropIfExists($this->buildName('users'));
-
+        $this->down();
 
         Schema::create($this->buildName('users'), function (Blueprint $table) {
             $table->uuid('id')->primary();
@@ -151,5 +143,17 @@ return new class extends Migration
     private function buildName($name): string
     {
         return config('cms.database.prefix') . $name;
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists($this->buildName('page_content_langs'));
+        Schema::dropIfExists($this->buildName('page_contents'));
+        Schema::dropIfExists($this->buildName('page_content_types'));
+        Schema::dropIfExists($this->buildName('pages'));
+        Schema::dropIfExists($this->buildName('langs'));
+        Schema::dropIfExists($this->buildName('user_privilege'));
+        Schema::dropIfExists($this->buildName('privileges'));
+        Schema::dropIfExists($this->buildName('users'));
     }
 };
