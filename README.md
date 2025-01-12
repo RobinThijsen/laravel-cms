@@ -18,7 +18,7 @@ composer require robinthijsen/laravel-cms
 Then install the package
 
 ```bash
-php artisan laravel-cms:install
+php artisan cms:install
 ```
 
 This will publish the config file to `config/cms.php`. <br/>

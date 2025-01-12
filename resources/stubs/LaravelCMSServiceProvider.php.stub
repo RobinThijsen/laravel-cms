@@ -1,5 +1,6 @@
 <?php
 
+namespace LaravelCMS;
 
 use Illuminate\Support\Facades\Blade;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;

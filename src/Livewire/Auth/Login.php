@@ -38,7 +38,7 @@ class Login extends Component
 
     public function render()
     {
-        return view('livewire.auth.login');
+        return view('cms::livewire.auth.login');
     }
 
     public function rules(): array

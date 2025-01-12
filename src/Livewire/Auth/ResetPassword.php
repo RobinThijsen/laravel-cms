@@ -49,7 +49,7 @@ class ResetPassword extends Component
 
     public function render()
     {
-        return view('livewire.auth.reset-password');
+        return view('cms::livewire.auth.reset-password');
     }
 
     public function rules(): array

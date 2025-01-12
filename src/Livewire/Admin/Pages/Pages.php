@@ -25,6 +25,6 @@ class Pages extends Component
         $this->table = config('cms.database.prefix') . 'pages';
         $pages = Page::orderBy($this->getBy(), $this->sortedDirection)
             ->paginate(config('cms.app.pagination'));
-        return view('livewire.admin.dashboard', compact('pages'));
+        return view('cms::livewire.admin.dashboard', compact('pages'));
     }
 }

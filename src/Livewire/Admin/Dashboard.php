@@ -13,6 +13,6 @@ class Dashboard extends Component
 
     public function render()
     {
-        return view('livewire.admin.dashboard');
+        return view('cms::livewire.admin.dashboard');
     }
 }
