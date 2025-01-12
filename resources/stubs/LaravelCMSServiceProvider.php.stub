@@ -18,19 +18,20 @@ class LaravelCMSServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-cms')
+            ->hasViews()
             ->hasConfigFile()
             ->hasMigrations('create_cms_tables')
             ->hasRoute('admin')
             ->publishesServiceProvider('LaravelCMSServiceProvider')
             ->hasInstallCommand(function (InstallCommand $command) {
                 $command->startWith(function (InstallCommand $command) {
-                    $command->info('Welcome to the Laravel CMS installation process');
+                    $command->comment('Welcome to the Laravel CMS installation process');
                 })->publishConfigFile()
                     ->publishMigrations()
                     ->askToRunMigrations()
                     ->copyAndRegisterServiceProviderInApp()
                     ->endWith(function (InstallCommand $command) {
-                        $command->info('Laravel CMS has been installed successfully !');
+                        $command->comment('Laravel CMS has been installed successfully !');
                         $command->comment('Thanks for using Laravel CMS');
                     });
             });

@@ -6,7 +6,7 @@ use LaravelCMS\Models\LaravelCMSModel as Model;
 
 class PageContentType extends Model
 {
-//    protected $table = 'cms_page_content_types';
+    protected $table = 'page_content_types';
 
     protected $fillable = [
         'name',

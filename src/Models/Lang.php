@@ -6,7 +6,7 @@ use LaravelCMS\Models\LaravelCMSModel as Model;
 
 class Lang extends Model
 {
-//    protected $table = 'cms_langs';
+    protected $table = 'langs';
 
     protected $fillable = [
         'name',

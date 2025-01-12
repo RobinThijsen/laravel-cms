@@ -7,7 +7,7 @@ use LaravelCMS\Models\LaravelCMSModel as Model;
 
 class Page extends Model
 {
-//    protected $table = 'pages';
+    protected $table = 'pages';
 
     protected $fillable = [
         'name',

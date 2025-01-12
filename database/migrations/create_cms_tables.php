@@ -9,7 +9,6 @@ return new class extends Migration
     public function up()
     {
         \Illuminate\Database\Eloquent\Model::unguard();
-        $this->down();
 
         Schema::create($this->buildName('users'), function (Blueprint $table) {
             $table->uuid('id')->primary();

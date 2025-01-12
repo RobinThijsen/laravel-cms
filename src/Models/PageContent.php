@@ -8,7 +8,7 @@ use LaravelCMS\Models\LaravelCMSModel as Model;
 
 class PageContent extends Model
 {
-//    protected $table = 'cms_page_contents';
+    protected $table = 'page_contents';
 
     protected $fillable = [
         'cms_page_id',

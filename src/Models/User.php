@@ -6,7 +6,7 @@ use LaravelCMS\Models\LaravelCMSModel as Model;
 
 class User extends Model
 {
-//    protected $table = 'cms_users';
+    protected $table = 'users';
 
     protected $fillable = [
         'name',
